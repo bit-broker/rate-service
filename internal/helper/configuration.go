@@ -28,6 +28,7 @@ type Configuration struct {
 	PolicyServiceEndpoint      string
 	PolicyServiceAuthorization string
 	PolicyServiceTimeout       string
+	MetricsEnabled             string
 }
 
 // Env : Type of env
@@ -58,6 +59,7 @@ func GetConfiguration() Configuration {
 		PolicyServiceEndpoint:      os.Getenv("POLICY_SERVICE_ENDPOINT"),
 		PolicyServiceAuthorization: os.Getenv("POLICY_SERVICE_AUTHORIZATION"),
 		PolicyServiceTimeout:       os.Getenv("POLICY_SERVICE_TIMEOUT"),
+		MetricsEnabled:             os.Getenv("METRICS_ENABLED"),
 	}
 
 	return configuration
