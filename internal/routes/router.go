@@ -13,6 +13,7 @@ import (
 	"net/http"
 
 	"github.com/bit-broker/rate-service/internal/controllers"
+	"github.com/bit-broker/rate-service/internal/helper"
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
@@ -58,8 +59,10 @@ func InitializeRouter() *mux.Router {
 	router.Handle("/api/v1/{uid}/config", http.HandlerFunc(controllers.DeleteConfig)).Methods("DELETE")
 
 	// Metrics
-	router.Use(prometheusMiddleware)
-	router.Path("/metrics").Handler(promhttp.Handler())
+	if helper.GetConfiguration().MetricsEnabled == "true" {
+		router.Use(prometheusMiddleware)
+		router.Path("/metrics").Handler(promhttp.Handler())
+	}
 
 	return router
 }
