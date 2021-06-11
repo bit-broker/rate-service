@@ -57,11 +57,12 @@ func main() {
 	c := cors.New(options)
 
 	// Start GRPC Server
+	log.Info("Starting GRPC Server with ", config.ServerGRPCHost)
 	go startGRPCServer(config.ServerGRPCHost)
 
 	// Start HTTP Server
 	handler := c.Handler(router)
-	log.Info("Starting HTTP Server")
+	log.Info("Starting HTTP Server with ", config.ServerHTTPHost)
 	log.Fatal(http.ListenAndServe(config.ServerHTTPHost, handler))
 }
 
