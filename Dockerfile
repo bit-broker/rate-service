@@ -1,5 +1,8 @@
 FROM golang:1.16.4-alpine3.13
 
+# Add build base
+RUN apk add build-base
+
 # Copy source code
 WORKDIR /home/rate-service
 COPY . .

@@ -125,7 +125,7 @@ var _ = Describe("Services", func() {
 			Expect(err).To(BeNil())
 
 			// Within quota / interval
-			for index := 0; index < config.Quota.Number-config.Rate-1; index++ {
+			for index := 0; index < config.Quota.Number-config.Rate; index++ {
 				status, err := services.Check(uid)
 				Expect(err).To(BeNil())
 				Expect(status).To(BeTrue())
