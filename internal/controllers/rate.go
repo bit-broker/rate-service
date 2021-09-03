@@ -126,6 +126,7 @@ func (r RatelimitService) ShouldRateLimit(ctx context.Context, request *ratelimi
 
 	// If uid not present
 	if len(uid) <= 0 {
+		log.Debug("Over Limit")
 		return &ratelimit.RateLimitResponse{
 			OverallCode: ratelimit.RateLimitResponse_OVER_LIMIT,
 		}, nil
@@ -135,11 +136,13 @@ func (r RatelimitService) ShouldRateLimit(ctx context.Context, request *ratelimi
 	ok, _ := services.Check(uid)
 
 	if !ok {
+		log.Debug("Over Limit")
 		return &ratelimit.RateLimitResponse{
 			OverallCode: ratelimit.RateLimitResponse_OVER_LIMIT,
 		}, nil
 	}
 
+	log.Debug("OK")
 	return &ratelimit.RateLimitResponse{
 		OverallCode: ratelimit.RateLimitResponse_OK,
 	}, nil
