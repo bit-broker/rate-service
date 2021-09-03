@@ -22,7 +22,6 @@ import (
 	"github.com/bit-broker/rate-service/pkg/log"
 
 	ratelimit_v2 "github.com/datawire/ambassador/pkg/api/envoy/service/ratelimit/v2"
-	ratelimit_v1 "github.com/datawire/ambassador/pkg/api/pb/lyft/ratelimit"
 
 	"google.golang.org/grpc"
 )
@@ -75,7 +74,6 @@ func startGRPCServer(host string) {
 	gRPCServer := grpc.NewServer()
 
 	// Register the service
-	ratelimit_v1.RegisterRateLimitServiceServer(gRPCServer, controllers.RatelimitService{})
 	ratelimit_v2.RegisterRateLimitServiceServer(gRPCServer, controllers.RatelimitService{})
 	log.Info("Starting gRPC Server")
 	if err := gRPCServer.Serve(listner); err != nil {
