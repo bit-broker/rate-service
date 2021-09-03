@@ -22,6 +22,7 @@ import (
 	"github.com/bit-broker/rate-service/internal/helper"
 	"github.com/bit-broker/rate-service/internal/models"
 
+	"github.com/bit-broker/rate-service/pkg/log"
 	"github.com/bit-broker/rate-service/pkg/redis"
 )
 
@@ -124,6 +125,9 @@ func Check(uid string) (bool, error) {
 		go CreateOrUpdateConfig(uid, config)
 	}
 
+	// Check config
+	log.Debug("Config is ", config)
+
 	// Check if enabled
 	if !config.Enabled {
 		return false, nil
@@ -183,5 +187,8 @@ func Check(uid string) (bool, error) {
 		config.Log[interval] = 1
 	}
 
-	return withinRate && withinQuota, nil
+	checkStatus := withinRate && withinQuota
+	log.Debug("Answer is ", checkStatus)
+
+	return checkStatus, nil
 }
