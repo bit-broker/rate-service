@@ -30,7 +30,7 @@ import (
 var uid = strconv.Itoa(rand.Intn(100))
 var mockupFirstConfigRaw = `{"enabled":true,"quota":{"max_number":10,"interval_type":"month"},"rate":5}`
 var mockupFirstConfig = &models.Config{Enabled: true, Quota: models.Quota{Number: 10, Interval: models.MonthType}, Rate: 5}
-var mockupSecondConfig = &models.Config{Enabled: true, Quota: models.Quota{Number: 15, Interval: models.DayType}, Rate: 2}
+var mockupSecondConfig = &models.Config{Enabled: true, Quota: models.Quota{Number: 5, Interval: models.DayType}, Rate: 20}
 var mockupPolicyServerAddr = ":5001"
 
 // ------------------------ GLOBAL -------------------- //
@@ -116,6 +116,39 @@ var _ = Describe("Services", func() {
 			Expect(status).To(BeFalse())
 		})
 
+		Context("Delete", func() {
+			It("should delete the config", func() {
+				// Delete config
+				services.DeleteConfig(uid)
+
+				// Get config
+				_, err := services.GetConfig(uid)
+				Expect(err).NotTo(BeNil())
+			})
+		})
+
+		Context("Create", func() {
+			It("should create the config", func() {
+				// Create config
+				services.CreateOrUpdateConfig(uid, *mockupFirstConfig)
+
+				// Get config
+				config, err := services.GetConfig(uid)
+				Expect(err).To(BeNil())
+				Expect(config).To(Equal(*mockupFirstConfig))
+			})
+
+			It("should update the config", func() {
+				// Create config
+				services.CreateOrUpdateConfig(uid, *mockupSecondConfig)
+
+				// Get config
+				config, err := services.GetConfig(uid)
+				Expect(err).To(BeNil())
+				Expect(config).To(Equal(*mockupSecondConfig))
+			})
+		})
+
 		It("should apply the correct quota", func() {
 			// Sleep one second
 			time.Sleep(1 * time.Second)
@@ -125,7 +158,7 @@ var _ = Describe("Services", func() {
 			Expect(err).To(BeNil())
 
 			// Within quota / interval
-			for index := 0; index < config.Quota.Number-config.Rate; index++ {
+			for index := 0; index < config.Quota.Number; index++ {
 				status, err := services.Check(uid)
 				Expect(err).To(BeNil())
 				Expect(status).To(BeTrue())
@@ -135,47 +168,6 @@ var _ = Describe("Services", func() {
 			status, err := services.Check(uid)
 			Expect(err).To(BeNil())
 			Expect(status).To(BeFalse())
-
-			// Sleep one second
-			time.Sleep(1 * time.Second)
-
-			// Above the quota / interval limit
-			status, err = services.Check(uid)
-			Expect(err).To(BeNil())
-			Expect(status).To(BeFalse())
-		})
-	})
-
-	Context("Delete", func() {
-		It("should delete the config", func() {
-			// Delete config
-			services.DeleteConfig(uid)
-
-			// Get config
-			_, err := services.GetConfig(uid)
-			Expect(err).NotTo(BeNil())
-		})
-	})
-
-	Context("Create", func() {
-		It("should create the config", func() {
-			// Create config
-			services.CreateOrUpdateConfig(uid, *mockupFirstConfig)
-
-			// Get config
-			config, err := services.GetConfig(uid)
-			Expect(err).To(BeNil())
-			Expect(config).To(Equal(*mockupFirstConfig))
-		})
-
-		It("should update the config", func() {
-			// Create config
-			services.CreateOrUpdateConfig(uid, *mockupSecondConfig)
-
-			// Get config
-			config, err := services.GetConfig(uid)
-			Expect(err).To(BeNil())
-			Expect(config).To(Equal(*mockupSecondConfig))
 		})
 	})
 })
