@@ -9,9 +9,9 @@ github.com/alicebob/miniredis/server
 github.com/beorn7/perks/quantile
 # github.com/cespare/xxhash/v2 v2.1.1
 github.com/cespare/xxhash/v2
-# github.com/cncf/udpa/go v0.0.0-20201120205902-5459f2c99403
+# github.com/cncf/udpa/go v0.0.0-20210322005330-6414d713912e
 github.com/cncf/udpa/go/udpa/annotations
-# github.com/datawire/ambassador v1.13.1
+# github.com/datawire/ambassador v1.14.3
 ## explicit
 github.com/datawire/ambassador/pkg/api/envoy/annotations
 github.com/datawire/ambassador/pkg/api/envoy/api/v2/core
@@ -19,7 +19,6 @@ github.com/datawire/ambassador/pkg/api/envoy/api/v2/ratelimit
 github.com/datawire/ambassador/pkg/api/envoy/service/ratelimit/v2
 github.com/datawire/ambassador/pkg/api/envoy/type
 github.com/datawire/ambassador/pkg/api/envoy/type/matcher
-github.com/datawire/ambassador/pkg/api/pb/lyft/ratelimit
 # github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f
 github.com/dgryski/go-rendezvous
 # github.com/envoyproxy/protoc-gen-validate v0.3.0-java.0.20200609174644-bd816e4522c1
@@ -43,7 +42,6 @@ github.com/golang/protobuf/protoc-gen-go/descriptor
 github.com/golang/protobuf/ptypes
 github.com/golang/protobuf/ptypes/any
 github.com/golang/protobuf/ptypes/duration
-github.com/golang/protobuf/ptypes/empty
 github.com/golang/protobuf/ptypes/struct
 github.com/golang/protobuf/ptypes/timestamp
 github.com/golang/protobuf/ptypes/wrappers
@@ -180,8 +178,6 @@ golang.org/x/text/secure/bidirule
 golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
-# golang.org/x/tools v0.1.0
-## explicit
 # google.golang.org/genproto v0.0.0-20201110150050-8816d57aaa9a
 google.golang.org/genproto/googleapis/rpc/status
 # google.golang.org/grpc v1.37.0
