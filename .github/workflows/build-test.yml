@@ -1,16 +1,14 @@
-name: Build and test
+name: Build and test rate-service
 on:
   pull_request:
     paths-ignore:
-      - '**.md'
+      - "**.md"
   workflow_dispatch:
 
 jobs:
-   
   build-launch-test:
     runs-on: ubuntu-latest
     steps:
-       
       - name: checkout
         uses: actions/checkout@v2
 
