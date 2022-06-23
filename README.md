@@ -1,6 +1,6 @@
 # BitBroker Rate Service
 
-This is the repo of BitBroker Rate Service.
+This is the repo of BitBroker Rate Service. This repo is used-by, but not strictly part-of, the core BitBroker service.
 
 Please visit [this page](INFO.md) for technical details.
 
