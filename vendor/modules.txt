@@ -9,8 +9,10 @@ github.com/alicebob/miniredis/server
 github.com/beorn7/perks/quantile
 # github.com/cespare/xxhash/v2 v2.1.1
 github.com/cespare/xxhash/v2
-# github.com/cncf/udpa/go v0.0.0-20201120205902-5459f2c99403
+# github.com/cncf/udpa/go v0.0.0-20210930031921-04548b0d99d4
 github.com/cncf/udpa/go/udpa/annotations
+# github.com/cncf/xds/go v0.0.0-20211011173535-cb28da3451f1
+github.com/cncf/xds/go/udpa/annotations
 # github.com/datawire/ambassador v1.13.1
 ## explicit
 github.com/datawire/ambassador/pkg/api/envoy/annotations
@@ -19,7 +21,6 @@ github.com/datawire/ambassador/pkg/api/envoy/api/v2/ratelimit
 github.com/datawire/ambassador/pkg/api/envoy/service/ratelimit/v2
 github.com/datawire/ambassador/pkg/api/envoy/type
 github.com/datawire/ambassador/pkg/api/envoy/type/matcher
-github.com/datawire/ambassador/pkg/api/pb/lyft/ratelimit
 # github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f
 github.com/dgryski/go-rendezvous
 # github.com/envoyproxy/protoc-gen-validate v0.3.0-java.0.20200609174644-bd816e4522c1
@@ -37,7 +38,7 @@ github.com/go-redis/redis/v8/internal/proto
 github.com/go-redis/redis/v8/internal/rand
 github.com/go-redis/redis/v8/internal/util
 # github.com/golang/protobuf v1.5.2
-## explicit
+github.com/golang/protobuf/jsonpb
 github.com/golang/protobuf/proto
 github.com/golang/protobuf/protoc-gen-go/descriptor
 github.com/golang/protobuf/ptypes
@@ -180,11 +181,9 @@ golang.org/x/text/secure/bidirule
 golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
-# golang.org/x/tools v0.1.0
-## explicit
 # google.golang.org/genproto v0.0.0-20201110150050-8816d57aaa9a
 google.golang.org/genproto/googleapis/rpc/status
-# google.golang.org/grpc v1.37.0
+# google.golang.org/grpc v1.50.0
 ## explicit
 google.golang.org/grpc
 google.golang.org/grpc/attributes
@@ -194,14 +193,17 @@ google.golang.org/grpc/balancer/base
 google.golang.org/grpc/balancer/grpclb/state
 google.golang.org/grpc/balancer/roundrobin
 google.golang.org/grpc/binarylog/grpc_binarylog_v1
+google.golang.org/grpc/channelz
 google.golang.org/grpc/codes
 google.golang.org/grpc/connectivity
 google.golang.org/grpc/credentials
+google.golang.org/grpc/credentials/insecure
 google.golang.org/grpc/encoding
 google.golang.org/grpc/encoding/proto
 google.golang.org/grpc/grpclog
 google.golang.org/grpc/internal
 google.golang.org/grpc/internal/backoff
+google.golang.org/grpc/internal/balancer/gracefulswitch
 google.golang.org/grpc/internal/balancerload
 google.golang.org/grpc/internal/binarylog
 google.golang.org/grpc/internal/buffer
@@ -213,6 +215,7 @@ google.golang.org/grpc/internal/grpcrand
 google.golang.org/grpc/internal/grpcsync
 google.golang.org/grpc/internal/grpcutil
 google.golang.org/grpc/internal/metadata
+google.golang.org/grpc/internal/pretty
 google.golang.org/grpc/internal/resolver
 google.golang.org/grpc/internal/resolver/dns
 google.golang.org/grpc/internal/resolver/passthrough
@@ -230,7 +233,7 @@ google.golang.org/grpc/serviceconfig
 google.golang.org/grpc/stats
 google.golang.org/grpc/status
 google.golang.org/grpc/tap
-# google.golang.org/protobuf v1.26.0
+# google.golang.org/protobuf v1.27.1
 google.golang.org/protobuf/encoding/protojson
 google.golang.org/protobuf/encoding/prototext
 google.golang.org/protobuf/encoding/protowire
