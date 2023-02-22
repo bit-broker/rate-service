@@ -9,9 +9,9 @@ github.com/alicebob/miniredis/server
 github.com/beorn7/perks/quantile
 # github.com/cespare/xxhash/v2 v2.1.1
 github.com/cespare/xxhash/v2
-# github.com/cncf/udpa/go v0.0.0-20201120205902-5459f2c99403
+# github.com/cncf/udpa/go v0.0.0-20210322005330-6414d713912e
 github.com/cncf/udpa/go/udpa/annotations
-# github.com/datawire/ambassador v1.13.1
+# github.com/datawire/ambassador v1.14.4
 ## explicit
 github.com/datawire/ambassador/pkg/api/envoy/annotations
 github.com/datawire/ambassador/pkg/api/envoy/api/v2/core
@@ -42,7 +42,6 @@ github.com/golang/protobuf/protoc-gen-go/descriptor
 github.com/golang/protobuf/ptypes
 github.com/golang/protobuf/ptypes/any
 github.com/golang/protobuf/ptypes/duration
-github.com/golang/protobuf/ptypes/empty
 github.com/golang/protobuf/ptypes/struct
 github.com/golang/protobuf/ptypes/timestamp
 github.com/golang/protobuf/ptypes/wrappers
