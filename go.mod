@@ -7,13 +7,12 @@ require (
 	github.com/alicebob/miniredis v2.5.0+incompatible
 	github.com/datawire/ambassador v1.14.4
 	github.com/go-redis/redis/v8 v8.8.2
-	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/gomodule/redigo v1.8.4 // indirect
 	github.com/gorilla/mux v1.8.0
 	github.com/joho/godotenv v1.5.1
 	github.com/onsi/ginkgo v1.16.2
 	github.com/onsi/gomega v1.11.0
-	github.com/prometheus/client_golang v1.10.0
+	github.com/prometheus/client_golang v1.14.0
 	github.com/rs/cors v1.8.3
 	github.com/sirupsen/logrus v1.9.0
 	github.com/yuin/gopher-lua v0.0.0-20200816102855-ee81675732da // indirect
