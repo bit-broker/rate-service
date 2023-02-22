@@ -19,7 +19,6 @@ github.com/datawire/ambassador/pkg/api/envoy/api/v2/ratelimit
 github.com/datawire/ambassador/pkg/api/envoy/service/ratelimit/v2
 github.com/datawire/ambassador/pkg/api/envoy/type
 github.com/datawire/ambassador/pkg/api/envoy/type/matcher
-github.com/datawire/ambassador/pkg/api/pb/lyft/ratelimit
 # github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f
 github.com/dgryski/go-rendezvous
 # github.com/envoyproxy/protoc-gen-validate v0.3.0-java.0.20200609174644-bd816e4522c1
@@ -119,7 +118,7 @@ github.com/prometheus/procfs/internal/util
 # github.com/rs/cors v1.7.0
 ## explicit
 github.com/rs/cors
-# github.com/sirupsen/logrus v1.7.0
+# github.com/sirupsen/logrus v1.9.0
 ## explicit
 github.com/sirupsen/logrus
 # github.com/yuin/gopher-lua v0.0.0-20200816102855-ee81675732da
@@ -155,7 +154,7 @@ golang.org/x/net/http2/hpack
 golang.org/x/net/idna
 golang.org/x/net/internal/timeseries
 golang.org/x/net/trace
-# golang.org/x/sys v0.0.0-20210309074719-68d13333faf2
+# golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
 golang.org/x/sys/windows
@@ -180,8 +179,6 @@ golang.org/x/text/secure/bidirule
 golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
-# golang.org/x/tools v0.1.0
-## explicit
 # google.golang.org/genproto v0.0.0-20201110150050-8816d57aaa9a
 google.golang.org/genproto/googleapis/rpc/status
 # google.golang.org/grpc v1.37.0
