@@ -52,7 +52,7 @@ github.com/gomodule/redigo/redis
 # github.com/gorilla/mux v1.8.0
 ## explicit
 github.com/gorilla/mux
-# github.com/joho/godotenv v1.3.0
+# github.com/joho/godotenv v1.5.1
 ## explicit
 github.com/joho/godotenv
 # github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369
