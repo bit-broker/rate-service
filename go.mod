@@ -12,7 +12,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/onsi/ginkgo v1.16.2
 	github.com/onsi/gomega v1.11.0
-	github.com/prometheus/client_golang v1.14.0
+	github.com/prometheus/client_golang v1.15.1
 	github.com/rs/cors v1.8.3
 	github.com/sirupsen/logrus v1.9.0
 	github.com/yuin/gopher-lua v0.0.0-20200816102855-ee81675732da // indirect
